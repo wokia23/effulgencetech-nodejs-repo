@@ -41,7 +41,7 @@ pipeline{
 			steps {
 
 				//sh 'docker run --name effulgencetech-node-cont-$BUILD_NUMBER -p 8082:8080 -d michaelgwei86/effulgencetech-nodejs-image:$BUILD_NUMBER'
-				sh 'docker run --name $CONTAINER_NAME-$BUILD_NUMBER -p 8088:8080 -d $IMAGE_REPO_NAME:$BUILD_NUMBER'
+				sh 'docker run --name $CONTAINER_NAME-$BUILD_NUMBER -p 8087:8080 -d $IMAGE_REPO_NAME:$BUILD_NUMBER'
 				sh 'docker ps'
 			}
 		}
@@ -51,7 +51,7 @@ pipeline{
 			//Pushing image to dockerhub
 			steps {
 				//sh 'docker push michaelgwei86/effulgencetech-nodejs-image:$BUILD_NUMBER'
-				sh 'docker push $IMAGE_REPO_NAME:$BUILD_NUMBER'
+				sh 'docker push wokia23/effulgencetech-nodejs-image/$IMAGE_REPO_NAME:$BUILD_NUMBER'
 			}
 		}
         
