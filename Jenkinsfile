@@ -51,7 +51,7 @@ pipeline{
 			//Pushing image to dockerhub
 			steps {
 				//sh 'docker push michaelgwei86/effulgencetech-nodejs-image:$BUILD_NUMBER'
-				sh 'docker push wokia23/effulgencetech-nodejs-image/$IMAGE_REPO_NAME:$BUILD_NUMBER'
+				sh 'docker push $IMAGE_REPO_NAME:$BUILD_NUMBER'
 			}
 		}
         
