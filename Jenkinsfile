@@ -23,6 +23,8 @@ pipeline{
 				//Building image for Dockerhub repo
 
 				//sh 'docker build -t wokia23/effulgencetech-nodejs-image:$BUILD_NUMBER .'
+				sh 'docker system prune -f'
+				sh 'docker container prune -f'
 				sh 'docker build -t $IMAGE_REPO_NAME:$BUILD_NUMBER .'
 				sh 'docker images'
 			}
